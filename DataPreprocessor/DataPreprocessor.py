@@ -44,7 +44,7 @@ class DataPreprocessor(BaseEstimator, TransformerMixin):
 
     def _convert_columns(self, X):
         date_col_index = 1  # Indice de la colonne de dates
-        cols_to_convert = [2, 3, 16, 18, 20, 22, 24, 26, 27, 28, 31]  # Exemple d'indices de colonnes à convertir
+        cols_to_convert = [0, 3, 16, 18, 20, 22, 24, 26, 27, 28, 31]  # Exemple d'indices de colonnes à convertir
         for col_idx in cols_to_convert:
             # Remplacer 'NULL' par np.nan
             column = np.where(X[:, col_idx] == 'NULL', np.nan, X[:, col_idx])
